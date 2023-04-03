@@ -55,22 +55,21 @@ export const Random = ({ max, min }) => {
 };
 
 //Iteration 4 | Component: BoxColor
-const decHex = (chanel) => {
-  const decimalNumber = chanel;
-  const hexNumber = decimalNumber.toString(16);
+const decToHex = (decimalChanel) => {
+  const hexNumber = decimalChanel.toString(16);
   return hexNumber.length === 1 ? '0' + hexNumber : hexNumber;
 };
 
-export const BoxColor = (props) => {
+export const BoxColor = ({ r, g, b }) => {
   return (
-    <div className="box" style={{ backgroundColor: `rgb(${props.r}, ${props.g}, ${props.b}` }}>
+    <div className="box" style={{ backgroundColor: `rgb(${r}, ${g}, ${b}` }}>
       <span>
-        rgb({props.r},{props.g},{props.b})
+        rgb({r},{g},{b})
       </span>
       <span>
-        #{decHex(props.r)}
-        {decHex(props.g)}
-        {decHex(props.b)}
+        #{decToHex(r)}
+        {decToHex(g)}
+        {decToHex(b)}
       </span>
     </div>
   );
@@ -115,43 +114,40 @@ const starDB = [
   { '1': starFull, '2': starFull, '3': starFull, '4': starFull, '5': starEmpty },
   { '1': starFull, '2': starFull, '3': starFull, '4': starFull, '5': starFull },
 ];
-export const Rating = (props) => {
-  let result = {};
-  let propsRounded = Math.round(props.children);
-  if (propsRounded === 0) {
-    result = starDB[0];
-  } else if (propsRounded === 1) {
-    result = starDB[1];
-  } else if (propsRounded === 2) {
-    result = starDB[2];
-  } else if (propsRounded === 3) {
-    result = starDB[3];
-  } else if (propsRounded === 4) {
-    result = starDB[4];
-  } else if (propsRounded === 5) {
-    result = starDB[5];
-  }
+export const Rating = ({ children }) => {
+  let childRounded = Math.round(children);
+  let result = starDB[childRounded];
+  childRounded > 5 || childRounded < 0 ? (result = starDB[0]) : null;
+
   return (
     <div className="rating">
-      <img src={result[1]} alt="Star Full" />
-      <img src={result[2]} alt="Star Full" />
-      <img src={result[3]} alt="Star Full" />
-      <img src={result[4]} alt="Star Full" />
-      <img src={result[5]} alt="Star Full" />
+      <img src={result[1]} alt="Star" />
+      <img src={result[2]} alt="Star" />
+      <img src={result[3]} alt="Star" />
+      <img src={result[4]} alt="Star" />
+      <img src={result[5]} alt="Star" />
     </div>
   );
 };
 
 //Iteration 7 | Component: DriverCard
 
-export const DriverCard = (props) => {
+export const DriverCard = ({ img, name, rating, car }) => {
   return (
-    <div style={{ backgroundColor: 'white', padding: '3px', width: '75%', marginLeft: '10px' }}>
-      <div className="drive">
-        <img className="idCard-img" src={props.img} />
-        <div>nombre</div>
-        <div>rating</div>
-        <div>car</div>
+    <div className="drive-container">
+      <div className="drive-card">
+        <div className="drive-card-img">
+          <img className="drive-card-img_fit" src={img} />
+        </div>
+        <div className="drive-card-text">
+          <h3>{name}</h3>
+          <span>
+            <Rating style={{width: '50px'}}>{rating}</Rating>
+          </span>
+          <p>
+            {car.model} - {car.licensePlate}
+          </p>
+        </div>
       </div>
     </div>
   );
