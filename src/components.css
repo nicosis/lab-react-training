@@ -115,4 +115,9 @@ body {
 .drive-card-text {
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
+}
+
+.drive-card-text h3, p {
+  margin: 5px 0px;
 }
