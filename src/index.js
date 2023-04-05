@@ -6,6 +6,7 @@ import IdCard from './components/IdCard';
 import BoxColor from './components/BoxColor';
 import Rating from './components/Rating';
 import DriverCard from './components/DriverCard';
+import LikeButton from './components/LikeButton';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -74,14 +75,18 @@ root.render(
     />
     <br />
     Iteration 6 | Component: Rating
-    <Rating className='rating-custom-base'>0</Rating>
-    <Rating className='rating-custom-base'>1.49</Rating>
-    <Rating className='rating-custom-base'>1.5</Rating>
-    <Rating className='rating-custom-base'>3</Rating>
-    <Rating className='rating-custom-base'>4</Rating>
-    <Rating className='rating-custom-base'>5</Rating>
+    <br />
+    <br />
+    <Rating className="rating-custom-base">0</Rating>
+    <Rating className="rating-custom-base">1.49</Rating>
+    <Rating className="rating-custom-base">1.5</Rating>
+    <Rating className="rating-custom-base">3</Rating>
+    <Rating className="rating-custom-base">4</Rating>
+    <Rating className="rating-custom-base">5</Rating>
     <br />
     Iteration 7 | Component: DriverCard
+    <br />
+    <br />
     <DriverCard
       name="Travis Kalanick"
       rating={4.2}
@@ -101,5 +106,10 @@ root.render(
       }}
     />
     <br />
+    Iteration 8 | State: LikeButton
+    <br />
+    <br />
+    <LikeButton />
+    <LikeButton />
   </React.StrictMode>
 );
