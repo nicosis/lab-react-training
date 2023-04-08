@@ -1,7 +1,6 @@
 .drive-container {
   background-color: white;
   padding: 5px;
-  margin-left: 10px;
 }
 
 .drive-card {
@@ -15,6 +14,7 @@
 .drive-card-img {
   width: 120px;
   height: 120px;
+  padding: 5px;
 }
 
 .drive-card-img_fit {

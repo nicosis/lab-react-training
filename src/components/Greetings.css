@@ -1,0 +1,10 @@
+.containerGreetings {
+    background-color: aliceblue;
+    border: 1px solid;
+    width: 400px;
+    height: 30px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
