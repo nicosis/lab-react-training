@@ -7,11 +7,16 @@ import BoxColor from './components/BoxColor';
 import Rating from './components/Rating';
 import DriverCard from './components/DriverCard';
 import LikeButton from './components/LikeButton';
+import ClickablePicture from './components/ClickablePicture';
+import Dice from './components/Dice';
+import Carousel from './components/Carousel';
+import NumbersTable from './components/NumbersTable'
 
 function App() {
   return (
     <div className="App">
-      Iteration 1 | Component: IdCard
+      <h1>Iteration 1 | Component: IdCard</h1>
+      <br />
       <IdCard
         imgSrc="https://randomuser.me/api/portraits/men/52.jpg"
         firstName="Nick"
@@ -29,19 +34,23 @@ function App() {
         birth={new Date('1988-05-11').toDateString()}
       />
       <br />
-      Iteration 2 | Component: Greetings
+      <h1>Iteration 2 | Component: Greetings</h1>
+      <br />
       <Greetings lang="de">Ludwig</Greetings>
       <Greetings lang="fr">François</Greetings>
       <br />
-      Iteration 3 | Component: Random
+      <h1>Iteration 3 | Component: Random</h1>
+      <br />
       <Random min={1} max={6} />
       <Random min={2} max={5} />
       <br />
-      Iteration 4 | Component: BoxColor
+      <h1>Iteration 4 | Component: BoxColor</h1>
+      <br />
       <BoxColor r={255} g={0} b={0} />
       <BoxColor r={180} g={255} b={0} />
       <br />
-      Iteration 5 | Component: CreditCard
+      <h1>Iteration 5 | Component: CreditCard</h1>
+      <br />
       <CreditCard
         type="Visa"
         number="0123456789018845"
@@ -73,8 +82,7 @@ function App() {
         color="white"
       />
       <br />
-      Iteration 6 | Component: Rating
-      <br />
+      <h1>Iteration 6 | Component: Rating</h1>
       <br />
       <Rating className="rating-custom-base">0</Rating>
       <Rating className="rating-custom-base">1.49</Rating>
@@ -83,8 +91,7 @@ function App() {
       <Rating className="rating-custom-base">4</Rating>
       <Rating className="rating-custom-base">5</Rating>
       <br />
-      Iteration 7 | Component: DriverCard
-      <br />
+      <h1>Iteration 7 | Component: DriverCard</h1>
       <br />
       <DriverCard
         name="Travis Kalanick"
@@ -105,11 +112,35 @@ function App() {
         }}
       />
       <br />
-      Iteration 8 | State: LikeButton
-      <br />
+      <h1>Iteration 8 | State: LikeButton</h1>
       <br />
       <LikeButton />
       <LikeButton />
+      <br />
+      <h1>Iteration 9 | State: ClickablePicture</h1>
+      <br />
+      <ClickablePicture img="maxence.png" imgClicked="maxence-glasses.png" />
+      <ClickablePicture img="nicosis.png" imgClicked="nicosis-mask.png" />
+      <br />
+      <h1>Iteration 10 | State: Dice</h1>
+      <br />
+      <Dice />
+      <br />
+      <h1>Iteration 11 | State: Carousel</h1>
+      <br />
+      <Carousel
+        images={[
+          'https://randomuser.me/api/portraits/women/1.jpg',
+          'https://randomuser.me/api/portraits/men/1.jpg',
+          'https://randomuser.me/api/portraits/women/2.jpg',
+          'https://randomuser.me/api/portraits/men/2.jpg',
+        ]}
+      />
+      <br />
+      <h1>Iteration 12 | List and Keys | NumbersTable</h1>
+      <br />
+      <NumbersTable limit={12} />
+      <br />
     </div>
   );
 }
