@@ -31,8 +31,7 @@
   color: white;
 }
 
-.drive-card-text h3,
-p {
+.drive-card-text {
   margin: 5px 0px;
 }
 
