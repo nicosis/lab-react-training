@@ -5,17 +5,21 @@ import profiles from '../data/berlin.json';
 const FaceBook = () => {
   const [countrySel, setCountrySel] = useState('');
   const countries = [...new Set(profiles.map((itm) => itm.country))];
-    console.log(countrySel);
+  console.log(countrySel);
+
+  const handleclick = (e) => {
+    setCountrySel(e.target.value);
+  };
 
   return (
     <div className="facebook-contenedor">
       {countries.map((itm, ind) => (
-        <button key={ind} value={itm} onClick={(e) => setCountrySel(e.target.value)}>
+        <button style={{ padding: '3px', margin: '2px' }} key={ind} value={itm} onClick={(e) => handleclick(e)}>
           {itm}
         </button>
       ))}
       {profiles.map((itm, ind) => (
-        <div key={ind} className="facebook-card-contenedor">
+        <div key={ind} className={` facebook-card-contenedor ${countrySel === itm.country ? 'bg' : ''} `}>
           <img src={itm.img} alt={itm.firstName} />
           <div className="faceBook-texto">
             <p>
