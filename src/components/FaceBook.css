@@ -1,27 +1,31 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.faceBook-contenedor {
-    width: 650px;
-    height: 200px;
-    background-color: white;
-    border: 2px solid;
-    padding: 10px;
-    display: flex;
-    margin: 5px;
+.facebook-contenedor {
+  width: 650px;
+  background-color: aquamarine;
 }
 
-.faceBook-contenedor img {
-    height: 100%;
-    object-fit: cover;
+.facebook-card-contenedor {
+  width: 640px;
+  height: 200px;
+  background-color: white;
+  border: 2px solid;
+  padding: 10px;
+  display: flex;
+  margin: 5px;
+}
+
+.facebook-card-contenedor img {
+  height: 100%;
+  object-fit: cover;
 }
 
 .faceBook-texto {
-font-size: 1.6rem;
-margin-left: 10px;
-line-height: 1.4;
-
+  font-size: 1.6rem;
+  margin-left: 10px;
+  line-height: 1.4;
 }

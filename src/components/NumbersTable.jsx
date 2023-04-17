@@ -6,7 +6,7 @@ const NumbersTable = (props) => {
   return (
     <div className="table-contenedor">
       {table.map((_, index) => (
-        <div className={`table-box ${(index + 1) % 2 == 0 ? 'red' : ''}`.trim()}>{index + 1}</div>
+        <div key={index} className={`table-box ${(index + 1) % 2 == 0 ? 'red' : ''}`.trim()}>{index + 1}</div>
       ))}
     </div>
   );
